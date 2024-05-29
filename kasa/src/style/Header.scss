@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 1240px;
+    height: 68px;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: inherit;
+    gap: 57px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34.22px;
+}

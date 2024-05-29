@@ -1,24 +1,26 @@
-import data from '../data.json';
-import '../App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom';
+import '../style/App.scss';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Home from '../Pages/Home';
+import About from '../Pages/About';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          {console.log(data)}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='main'>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
-}
-
+};
 export default App;
