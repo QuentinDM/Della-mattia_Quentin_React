@@ -7,7 +7,7 @@ import '../style/Collapse.scss';
 
 function Home() {
   // state (data)
-  const [collapseAbout, setCollapseAbout] = useState([
+  const [collapseAbout] = useState([
     {id: 1, title: "Fiabilité", content:
     "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."},
     {id: 2, title: "Respect", content: "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."},
