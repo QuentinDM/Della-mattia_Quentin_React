@@ -1,19 +1,33 @@
 import Slideshow  from "../components/Slideshow " ;
 import '../style/Slideshow .scss' ;
-import { useState } from "react";
+import React, { useState } from 'react';
 
 import Next from '../assets/Arrow-right.png'
 import Previous from '../assets/Arrow-left.png'
+import Collapse from '../components/Collapse'
+import Tag from "../components/Tag";
+
+import StarEmpty from '../assets/Rating-star-empty.png';
+import Star from '../assets/Rating-star.png';
+
+
 
 function Description() {
   // state (data)
   const accommodationInfo = JSON.parse(localStorage.getItem("thePictures")) ;
   const pictureOfAccomodation = accommodationInfo.pictures;
+  const tagOfAccomodation = accommodationInfo.tags;
   let [numberStart, setNumberStart] = useState(1);
   const [url, setUrl] = useState(pictureOfAccomodation[0]);
   let [index, setIndex] = useState(0); // Initialisez index à 0 pour accéder à la première image
   const totalImages = pictureOfAccomodation.length ;
-  
+  const rating = accommodationInfo.rating ; 
+
+  const [collapse] = useState([
+    {id: 1, title: 'Équipements', content: accommodationInfo.equipments},
+    {id: 2, title: 'Description', content: accommodationInfo.description}
+  ])
+
   //comportements
   const handleClickNext = () => {
     // Calculer le nouvel index en incrémentant l'index actuel
@@ -50,20 +64,62 @@ function Description() {
     });
   }
 
+// Générer les étoiles en fonction du rating
+  const generateStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+        if (i < rating) {
+            stars.push(<img key={i} src={Star} alt="Score de l'appartement" />);
+        } else {
+            stars.push(<img key={i} src={StarEmpty} alt="Score de l'appartement" />);
+        }
+    }
+    return stars;
+  }
+
+ 
   //RENDER 
   return (
-    <nav className="carrousel-slide">
-      <ul className="list-images">
-        {pictureOfAccomodation.map((picture, index) => (
-          <Slideshow key={index} showPics={picture} nextImage={url}/>
-        ))}
-      </ul>
-      <p className="footer-number">{numberStart}/{totalImages}</p> 
-      <div className="slide-buttons">
-        <button className="slide-image"><img src={Previous} alt="Arrow direction left" className="arrow" onClick={handleClickPrevious}/></button>
-        <button className="slide-image"><img src={Next} alt="Arrow direction right" className="arrow" onClick={handleClickNext}/></button>
-      </div>
-    </nav>
+    <div>
+      <nav className="carrousel-slide">
+        <ul className="list-images">
+          {pictureOfAccomodation.map((picture, index) => (
+            <Slideshow key={index} showPics={picture} nextImage={url}/>
+          ))}
+        </ul>
+        <p className="footer-number">{numberStart}/{totalImages}</p> 
+        <div className="slide-buttons">
+          <button className="slide-image"><img src={Previous} alt="Arrow direction left" className="arrow" onClick={handleClickPrevious}/></button>
+          <button className="slide-image"><img src={Next} alt="Arrow direction right" className="arrow" onClick={handleClickNext}/></button>
+        </div>
+      </nav>
+      <section>
+        <div>
+          <h2>{accommodationInfo.title}</h2>
+          <p>{accommodationInfo.location}</p>
+          <div>
+            <ul>
+              {tagOfAccomodation.map((tagName) => (
+                <Tag key={tagName} tag={tagName}/>
+              ))}
+            </ul>
+            {generateStars()}
+          </div>
+        </div>
+        
+        <div>
+          <span>{accommodationInfo.host.name}</span>
+          <img src={accommodationInfo.host.picture} alt="Owner profil"/>
+        </div>
+        <div>
+          <ul className='content-collapse'>
+            {collapse.map((about) => (
+              <Collapse key={about.id} collapseInfo={about}/>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
   );
 };
 
