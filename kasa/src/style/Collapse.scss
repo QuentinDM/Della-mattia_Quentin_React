@@ -52,11 +52,15 @@
 .close{
     animation: close 0.2s ease-in-out forwards;
     cursor: pointer;
+    width: 24px;
+    height: 13px;
 }
 
 .open{
     animation: openning 0.2s ease-in-out forwards;
     cursor: pointer;
+    width: 24px;
+    height: 13px;
 }
 
 @keyframes close {

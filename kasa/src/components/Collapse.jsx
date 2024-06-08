@@ -28,11 +28,11 @@ function Collapse(props) {
     // RENDER 
     return (
         <div>
-            <li className={`collapse-container ${open ? 'collapse-opened' : ''}`}  onClick={toggleCollapse}>
-                <h2 className='collapse-title'>{collapse.title}</h2>
+            <li className={currentPage === 'http://localhost:3000/fiche' ? `collapse-fiche` : `collapse-container ${open ? 'collapse-opened' : ''}`}  onClick={toggleCollapse}>
+                <h2 className='collapse-title'>{collapse.title}</h2> 
                 <img src={Arrowup} alt="Arrow" className={open ? 'open' : 'close'}/>
             </li>
-            <article className={open ? 'collapse-article' : ''}>
+            <article className={currentPage === 'http://localhost:3000/fiche'  && open ? `collapse-text` : open ? 'collapse-article' : ''}>
                 {currentPage === 'http://localhost:3000/about' ? (
                     <p className={open ? '' : 'hidden'}>{collapse.content}</p>
                 ) : currentPage === 'http://localhost:3000/fiche' && collapse.title === 'Équipements' ? (

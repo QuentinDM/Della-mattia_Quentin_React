@@ -4,8 +4,8 @@ function Tag(props) {
     console.log(getTags);
     //Render
     return (
-        <li>
-            <p>{getTags}</p>
+        <li className="tag">
+            <p className="tag-name">{getTags}</p>
         </li>
     )
 }

@@ -10,7 +10,7 @@ import Tag from "../components/Tag";
 import StarEmpty from '../assets/Rating-star-empty.png';
 import Star from '../assets/Rating-star.png';
 
-
+import '../style/Tag.scss'
 
 function Description() {
   // state (data)
@@ -93,26 +93,30 @@ function Description() {
           <button className="slide-image"><img src={Next} alt="Arrow direction right" className="arrow" onClick={handleClickNext}/></button>
         </div>
       </nav>
-      <section>
-        <div>
-          <h2>{accommodationInfo.title}</h2>
-          <p>{accommodationInfo.location}</p>
-          <div>
-            <ul>
+      <section className="information-section">
+        <div className="accommodation-owner-conteiner">
+          <div className="presentation">
+            <h1>{accommodationInfo.title}</h1>
+            <p>{accommodationInfo.location}</p>
+          </div>
+          <div className="host-conteiner">
+            <h2>{accommodationInfo.host.name}</h2>
+            <img src={accommodationInfo.host.picture} alt="Owner profil"/>
+        </div>
+        </div>
+        <div className="tag-rate-conteiner">
+            <ul className="tag-list">
               {tagOfAccomodation.map((tagName) => (
                 <Tag key={tagName} tag={tagName}/>
               ))}
             </ul>
-            {generateStars()}
+            <div className="rating">
+              {generateStars()}
+            </div>
           </div>
-        </div>
         
         <div>
-          <span>{accommodationInfo.host.name}</span>
-          <img src={accommodationInfo.host.picture} alt="Owner profil"/>
-        </div>
-        <div>
-          <ul className='content-collapse'>
+          <ul className="collapse">
             {collapse.map((about) => (
               <Collapse key={about.id} collapseInfo={about}/>
             ))}
