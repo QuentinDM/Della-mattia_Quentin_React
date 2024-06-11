@@ -1,4 +1,4 @@
-import '../style/Banner.scss'
+
 
 function Banner({images}, {alt}) {
     // state (data)

@@ -1,5 +1,5 @@
 import Logo from '../assets/LOGO-white.png' ;
-import '../style/Footer.scss' ;
+
 
 function Footer() {
     // state (data)
@@ -9,7 +9,7 @@ function Footer() {
     //RENDER 
     return (
         <div className='footer'>
-            <img src={Logo} alt="Logo de la societe Kasa" className='logo'/>
+            <img src={Logo} alt="Logo de la societe Kasa" />
             <p className='copyright'>© 2020 Kasa. All rights reserved</p>
         </div>
     ) 

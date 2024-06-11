@@ -1,5 +1,5 @@
 import Slideshow  from "../components/Slideshow " ;
-import '../style/Slideshow .scss' ;
+
 import React, { useState } from 'react';
 
 import Next from '../assets/Arrow-right.png'
@@ -10,7 +10,7 @@ import Tag from "../components/Tag";
 import StarEmpty from '../assets/Rating-star-empty.png';
 import Star from '../assets/Rating-star.png';
 
-import '../style/Tag.scss'
+
 
 function Description() {
   // state (data)
@@ -94,26 +94,30 @@ function Description() {
         </div>
       </nav>
       <section className="information-section">
-        <div className="accommodation-owner-conteiner">
-          <div className="presentation">
+        <div className="information-accommodation">
+
+          <div className="accommodation-owner-conteiner">
+            <div className="presentation">
             <h1>{accommodationInfo.title}</h1>
             <p>{accommodationInfo.location}</p>
-          </div>
-          <div className="host-conteiner">
-            <h2>{accommodationInfo.host.name}</h2>
-            <img src={accommodationInfo.host.picture} alt="Owner profil"/>
-        </div>
-        </div>
-        <div className="tag-rate-conteiner">
+            </div>
             <ul className="tag-list">
               {tagOfAccomodation.map((tagName) => (
                 <Tag key={tagName} tag={tagName}/>
               ))}
             </ul>
+          </div>
+  
+          <div className="tag-rate-conteiner">
             <div className="rating">
               {generateStars()}
             </div>
+            <div className="host-conteiner">
+              <h2>{accommodationInfo.host.name}</h2>
+              <img src={accommodationInfo.host.picture} alt="Owner profil"/>
+            </div>
           </div>
+        </div>
         
         <div>
           <ul className="collapse">

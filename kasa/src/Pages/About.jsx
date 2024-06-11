@@ -3,7 +3,7 @@ import Paysage from '../assets/Paysage-Montagnes.png';
 import Banner from '../components/Banner';
 import Collapse from '../components/Collapse';
 
-import '../style/Collapse.scss';
+
 
 function Home() {
   // state (data)

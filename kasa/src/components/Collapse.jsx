@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Arrowup from '../assets/Arrow-up.png';
 
-import '../style/Collapse.scss'
+
 
 function Collapse(props) {
     // state (data)
@@ -13,6 +13,7 @@ function Collapse(props) {
     useEffect(() => {
         setCurrentPage(window.location.href);
     }, []); // Exécuter une seule fois après le premier rendu pour récupérer l'URL actuelle
+    
     /*j'ai utilisé useEffect pour récupérer l'URL 
     actuelle une fois après le premier rendu du composant, 
     car avant j'essayer de changer l'etat currentPage qui etait une const qui faisait un conflit si je changeais de page

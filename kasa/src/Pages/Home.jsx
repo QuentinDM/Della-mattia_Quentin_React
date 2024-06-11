@@ -4,8 +4,7 @@ import Banner from '../components/Banner';
 import Card from '../components/Card';
 import Image from '../assets/Photo-bord-de-mer-falaise.png';
 import { Link } from 'react-router-dom';
-//css
-import '../style/Card.scss' ;
+
 
 function Home() {
   // state (data)
