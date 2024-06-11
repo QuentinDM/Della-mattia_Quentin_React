@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Home from '../Pages/Home';
 import About from '../Pages/About';
 import Description from '../Pages/Fiche-logement';
+import ErrorPage from '../Pages/ErrorPage'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/fiche' element={<Description />}/>
+            <Route path='/fiche' element={<Description />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </main>
         <Footer />

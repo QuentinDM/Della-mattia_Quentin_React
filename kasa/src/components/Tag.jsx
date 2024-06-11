@@ -1,7 +1,6 @@
 function Tag(props) {
     //State
     const getTags = props.tag
-    console.log(getTags);
     //Render
     return (
         <li className="tag">
