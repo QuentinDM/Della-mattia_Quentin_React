@@ -238,20 +238,24 @@ body {
 }
 
 //Accomodation list SASS
+//SlidShow component
 .carrousel-slide {
 	display: flex;
 	position: relative;
+	list-style: none;
 	width: 1240px;
 	height: 415px;
+	margin-top: 50px;
 }
-.list-images {
-	position: relative;
-	list-style: none;
-	padding: inherit;
-	.list-carrousel {
-		position: absolute;
-	}
+.slide{
+	display: flex;
+    align-items: center;
+    width: 100%;
 }
+.carrousel {
+	position: absolute;
+}
+
 figure {
 	margin: inherit;
 }
@@ -295,6 +299,10 @@ figure {
 	object-fit: fill;
 	cursor: pointer;
 }
+.display-none{
+	display: none;
+}
+//information component
 .information-section {
 	margin: 50px 0;
 }
@@ -565,6 +573,7 @@ figure {
 	.carrousel-slide {
 		width: 335px;
 		height: 255px;
+		margin-top: 27px;
 	}
 	.accomodation-picture {
 		width: 335px;
@@ -581,6 +590,7 @@ figure {
 	}
 	.information-section {
 		margin: 50px 0;
+		width: 335px;
 	}
 	.information-accommodation{
 		flex-direction: column;

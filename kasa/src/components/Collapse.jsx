@@ -8,7 +8,6 @@ function Collapse(props) {
     const [open, setOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState('');
     const collapse = props.collapseInfo;
-    console.log(collapse);
 
     useEffect(() => {
         setCurrentPage(window.location.href);
