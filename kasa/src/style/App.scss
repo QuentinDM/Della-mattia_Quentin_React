@@ -142,6 +142,20 @@ body {
 		height: 340px;
 		border-radius: 10px;
 	}
+	h2 {
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 25.67px;
+		width: 300px;
+		height: 52px;
+		color: $color_3;
+		position: absolute;
+		bottom: 5px;
+		left: 5px;
+		margin: 0;
+		padding: 5px;
+		text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.50);
+}
 	list-style: none;
 	position: relative;
 }
@@ -162,20 +176,7 @@ body {
 	gap: 50px;
 	padding: inherit;
 }
-.h2 {
-	font-size: 18px;
-	font-weight: 700;
-	line-height: 25.67px;
-	width: 300px;
-	height: 52px;
-	color: $color_3;
-	position: absolute;
-	bottom: 5px;
-	left: 5px;
-	margin: 0;
-	padding: 5px;
-	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.50);
-}
+
 
 //Collapse SASS
 .content-collapse {
@@ -318,7 +319,7 @@ figure {
 }
 .presentation {
 	height: 77px;
-	>h1 {
+	>h2 {
 		margin: inherit;
 		font-size: 36px;
 		font-weight: 500;
@@ -337,7 +338,7 @@ figure {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	>h2 {
+	>p {
 		width: 78px;
 		height: auto;
 		text-align: end;
@@ -365,6 +366,7 @@ figure {
 	height: 25px;
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: 10px;
 	padding: inherit;
@@ -589,7 +591,7 @@ figure {
 		margin: inherit;
 	}
 	.information-section {
-		margin: 50px 0;
+		margin: 27px 0;
 		width: 335px;
 	}
 	.information-accommodation{
@@ -600,7 +602,7 @@ figure {
 	}
 	.presentation {
 		height: auto;
-		>h1 {
+		>h2 {
 			font-size: 18px;
 			line-height: 26px;
 		}
@@ -613,8 +615,8 @@ figure {
 		display: flex;
 		align-items: center;
 		gap: 20px;
-		>h2 {
-			width: 78px;
+		>p {
+			width: 50px;
 			font-size: 12px;
 			font-weight: 500;
 			line-height: 17px;
@@ -630,8 +632,7 @@ figure {
 		margin-top: 10px;
 	}
 	.tag-list {
-		width: auto;
-		height: 18px;
+		height: auto;
 	}
 	.tag {
 		padding: 2px 10px;
@@ -684,6 +685,10 @@ figure {
 		font-size: 14px;
 		line-height: 20px;
 		margin: 100px 0;
+	}
+	.br-text {
+		display: flex;
+		flex-direction: column;
 	}
 
 
