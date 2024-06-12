@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Title from './Title';
 
 
 function Card(props) {
@@ -10,7 +11,7 @@ function Card(props) {
             localStorage.setItem("thePictures", JSON.stringify(accommodationInfo));
         }} className='list'>
             <img src={accommodationInfo.cover} alt={accommodationInfo.title} />
-            <h2 className='h2'>{accommodationInfo.title}</h2>
+            <Title title={accommodationInfo.title}/>
         </li>
     );
 }

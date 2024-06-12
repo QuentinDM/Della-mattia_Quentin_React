@@ -4,7 +4,7 @@ function Host(props) {
 
     return (
         <div className="host-conteiner">
-            <h2>{name}</h2>
+            <p>{name}</p>
             <img src={profile} alt="Owner profil"/>
         </div>
         )

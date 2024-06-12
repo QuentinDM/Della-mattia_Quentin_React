@@ -1,7 +1,7 @@
 function Title(props) {
     const title = props.title
 
-    return <h1>{title}</h1>
+    return <h2>{title}</h2>
 }
 
 export default Title ;
