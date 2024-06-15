@@ -1,10 +1,8 @@
-function Tag(props) {
-    //State
-    const getTags = props.tag
+function Tag({tag}) {
     //Render
     return (
         <li className="tag">
-            <p className="tag-name">{getTags}</p>
+            <p className="tag-name">{tag}</p>
         </li>
     )
 }

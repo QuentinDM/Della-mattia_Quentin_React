@@ -3,11 +3,10 @@ import Arrowup from '../assets/Arrow-up.png';
 
 
 
-function Collapse(props) {
+function Collapse({collapseInfo}) {
     // state (data)
     const [open, setOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState('');
-    const collapse = props.collapseInfo;
 
     useEffect(() => {
         setCurrentPage(window.location.href);
@@ -29,20 +28,20 @@ function Collapse(props) {
     return (
         <div>
             <li className={currentPage === 'http://localhost:3000/fiche' ? `collapse-fiche` : `collapse-container ${open ? 'collapse-opened' : ''}`}  onClick={toggleCollapse}>
-                <h2 className='collapse-title'>{collapse.title}</h2> 
+                <h2 className='collapse-title'>{collapseInfo.title}</h2> 
                 <img src={Arrowup} alt="Arrow" className={open ? 'open' : 'close'}/>
             </li>
             <article className={currentPage === 'http://localhost:3000/fiche'  && open ? `collapse-text` : open ? 'collapse-article' : ''}>
                 {currentPage === 'http://localhost:3000/about' ? (
-                    <p className={open ? '' : 'hidden'}>{collapse.content}</p>
-                ) : currentPage === 'http://localhost:3000/fiche' && collapse.title === 'Équipements' ? (
+                    <p className={open ? '' : 'hidden'}>{collapseInfo.content}</p>
+                ) : currentPage === 'http://localhost:3000/fiche' && collapseInfo.title === 'Équipements' ? (
                     <ul className={open ? '' : 'hidden'}>
-                        {collapse.content.map((equipment) => (//transform Object to Array
+                        {collapseInfo.content.map((equipment) => (//transform Object to Array
                             <li key={equipment}>{equipment}</li>
                         ))}
                     </ul> 
                 ) : (
-                    <p className={open ? '' : 'hidden'}>{collapse.content}</p>   
+                    <p className={open ? '' : 'hidden'}>{collapseInfo.content}</p>   
                 )}
             </article>
         </div>

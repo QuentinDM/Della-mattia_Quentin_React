@@ -2,10 +2,6 @@ import Logo from '../assets/LOGO-white.png' ;
 
 
 function Footer() {
-    // state (data)
-
-    //comportements
-
     //RENDER 
     return (
         <div className='footer'>

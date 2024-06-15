@@ -7,14 +7,14 @@ const Slideshow = ({ pictures }) => {
   //Sate
   let [numberStart, setNumberStart] = useState(1);
   const [index, setIndex] = useState(0);// Initialisez index à 0 pour accéder à la première image
-  const [url, setUrl] = useState(pictures[0]);
+  const [imageUrl, setImageUrl] = useState(pictures[0]);
   const totalImages = pictures.length;
 
   //Comportements
   const handleClickNext = () => {
     let newIndex = (index + 1) % totalImages;
     setIndex(newIndex);
-    setUrl(pictures[newIndex]);
+    setImageUrl(pictures[newIndex]);
     setNumberStart(prevNumberStart => {
       if (prevNumberStart >= totalImages) {
         return 1;
@@ -27,7 +27,7 @@ const Slideshow = ({ pictures }) => {
   const handleClickPrevious = () => {
     const newIndex = (index - 1 + totalImages) % totalImages;
     setIndex(newIndex);
-    setUrl(pictures[newIndex]);
+    setImageUrl(pictures[newIndex]);
     setNumberStart(prevNumberStart => {
       if (prevNumberStart <= 1) {
         return totalImages;
@@ -41,7 +41,7 @@ const Slideshow = ({ pictures }) => {
   return (
     <div className='slide'>
       <figure className='carrousel'>
-            <img src={url} alt="apppartement" className='accomodation-picture' />
+            <img src={imageUrl} alt="apppartement" className='accomodation-picture' />
       </figure>
       
       <p className="footer-number">{numberStart}/{totalImages}</p> 

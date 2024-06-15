@@ -1,8 +1,7 @@
 import StarEmpty from '../assets/Rating-star-empty.png';
 import Star from '../assets/Rating-star.png';
 
-function Rating(props) {
-    const rate = props.rate
+function Rating({rate}) {
     //Comportement :
      // Generating Stars
     const generateStars = () => {

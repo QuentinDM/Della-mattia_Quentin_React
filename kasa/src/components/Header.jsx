@@ -4,6 +4,7 @@ import Logo from '../assets/LOGO.svg';
 
 
 function Header() {
+  //State
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState('');
 
@@ -11,22 +12,19 @@ function Header() {
     setCurrentPage(window.location.href);
   }, [location]);
 
-  const handleClick = () => {
-    setCurrentPage(window.location.href);
-  };
-
+  //Render
   return (
     <header className="header">
       <img src={Logo} alt="Logo" className="logo-header" />
       <nav>
         <ul className="nav-list">
           <li>
-            <Link to="/" onClick={handleClick} className={currentPage.endsWith('/') ? 'homepage-link' : 'link-none'}>
+            <Link to="/"  className={currentPage.endsWith('/') ? 'homepage-link' : 'link-none'}>
               Accueil
             </Link>
           </li>
           <li>
-            <Link to="/about" onClick={handleClick} className={currentPage.endsWith('/about') ? 'page-about-link' : 'link-none'}>
+            <Link to="/about"  className={currentPage.endsWith('/about') ? 'page-about-link' : 'link-none'}>
               À Propos
             </Link>
           </li>

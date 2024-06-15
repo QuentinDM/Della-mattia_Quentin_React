@@ -28,7 +28,6 @@ function Description() {
   }, [accommodationInfo.id ,navigate])
   //comportements
   
-  //<Rating rate={accommodationInfo.rating} />
   //RENDER 
   return (
     <div>

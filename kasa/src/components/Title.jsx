@@ -1,6 +1,5 @@
-function Title(props) {
-    const title = props.title
-
+function Title({title}) {
+   //Render
     return <h2>{title}</h2>
 }
 

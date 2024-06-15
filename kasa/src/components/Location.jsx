@@ -1,6 +1,5 @@
-function Location(props) {
-    const location = props.location
-
+function Location({location}) {
+    //Render
     return <p>{location}</p>
 }
 

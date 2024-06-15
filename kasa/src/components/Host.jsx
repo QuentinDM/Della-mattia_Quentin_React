@@ -1,11 +1,9 @@
-function Host(props) {
-    const name = props.hostName
-    const profile = props.profileHost
-
+function Host({hostName}, {profileHost}) {
+    //Render
     return (
         <div className="host-conteiner">
-            <p>{name}</p>
-            <img src={profile} alt="Owner profil"/>
+            <p>{hostName}</p>
+            <img src={profileHost} alt="Owner profil"/>
         </div>
         )
 }
