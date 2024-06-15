@@ -1,4 +1,5 @@
-function Host({hostName}, {profileHost}) {
+function Host({hostName, profileHost}) {
+    console.log(profileHost, hostName);
     //Render
     return (
         <div className="host-conteiner">

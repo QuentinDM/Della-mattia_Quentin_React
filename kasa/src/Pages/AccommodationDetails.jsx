@@ -19,7 +19,7 @@ function Description() {
     {id: 1, title: 'Équipements', content: accommodationInfo.equipments},
     {id: 2, title: 'Description', content: accommodationInfo.description}
   ])
-
+  console.log(accommodationInfo.host.picture);
   //if Accommodation no id then Error
   useEffect (() => {
     if (!accommodationInfo.id) {
